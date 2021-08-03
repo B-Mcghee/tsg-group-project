@@ -1,0 +1,52 @@
+<html xmlns:th="http//www.thymeleaf.org" xmlns ="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title th:text="${category.name}"></title>
+</head>
+<body>
+<div th:replace = "fragments.html :: header"></div>
+
+<div class="body-content">
+<div class="color-overlay-pages"></div>
+<div class= "row container-full-width">
+    <div th:replace = "fragments.html :: sideNav"></div>
+
+
+
+
+    <div class="col-9 container">
+
+        <h1 class="category-header" th:text="${category.name}"></h1>
+
+        <div class=" blogs  row" th:each ="blog:${blogs}">
+            <a th:href="@{/spaceblog/blog/id(id=${blog.id})}">
+                <div class="col-12 row image-box">
+
+                    <div class="card image-column">
+
+                        <img class ="col-sm-12" th:src ="@{/img/thumbnail.jpg}" alt="">
+                    </div>
+                    <div class=" col-sm-12 col-md-8 row blog-content">
+                        <h1 class="col-md-12" th:text="${blog.title}"></h1>
+                        <p class="col-md-12 " th:utext="${blog.body}"></p>
+                        <h4 class="date-header" th:text="${#temporals.format(blog.datePosted, 'MMM dd, yyyy')}"></h4><span class="read-more btn btn-primary">Read More:</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<div th:replace = "fragments.html :: footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello Security: Login</title>
+</head>
+<body>
+<div th:replace = "fragments.html :: header"></div>
+<div class=" login-input d-flex justify-content-center align-items-center">
+    <div class="row login-form">
+        <h2 class="col-12 d-flex justify-content-center">Login Page</h2>
+        <h3 th:if="${#request.getParameter('login_error') == '1'}">Wrong id or password!</h3>
+        <form method="post" action="login">
+            <input class="input-style col-12" type="text" name="username" placeholder="Username"/>
+            <input class="input-style col-12" type="password" name="password" placeholder="Password"/>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <div class="d-flex justify-content-center">
+                <button id="login-button" class="col-6 " type="submit" value="Sign In">Sign In</button>
+            </div>
+
+        </form>
+
+    </div>
+    <div>
+        <svg class="svg-icon" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768">
+            <style>
+    .st0{fill:none}.st1{fill:#fff}.st2{font-family:&apos;SignPainter-HouseScriptSemibold&apos;}.st3{font-size:110px}
+  </style>
+            <path transform="matrix(.00578 -1 1 .00578 33.31 952.085)" class="st0" d="M388.98 293.83h212.96v330.92H388.98z"/>
+            <text transform="translate(330.58 420.924)" class="st1 st2 st3">
+                Shapes
+            </text>
+            <path fill="red" stroke="#0071bc" stroke-width="5" stroke-miterlimit="10" d="M165.5 217.5h685v221h-685z"/>
+            <path class="st0" d="M200.54 244.48h581.98v161.33H200.54z"/>
+            <text transform="translate(200.541 313.548)">
+                <tspan x="0" y="0" class="st1 st2 st3">Developed by:</tspan><tspan x="0" y="87" class="st1 st2 st3">Blogger Space</tspan>
+            </text>
+            <path class = "inner-square" d="M873 478H148c-6.6 0-12-5.4-12-12V177c0-6.6 5.4-12 12-12h725c6.6 0 12 5.4 12 12v289c0 6.6-5.4 12-12 12z" fill="none" stroke="red" stroke-width="5" stroke-miterlimit="10"/>
+            <path class ="outerSquare" d="M900.5 513.5h-776c-6.6 0-12-5.4-12-12v-362c0-6.6 5.4-12 12-12h776c6.6 0 12 5.4 12 12v362c0 6.6-5.4 12-12 12z" fill="none" stroke="#0071bc" stroke-width="5" stroke-miterlimit="10"/>
+        </svg>
+    </div>
+</div>
+
+
+<div th:replace = "fragments.html :: footer"></div>
+
+</body>
+</html>

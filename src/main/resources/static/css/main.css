@@ -1,0 +1,343 @@
+.body-content{
+
+    background-image:url(../img/galaxy.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat:repeat;
+    min-height:100vh;
+    color:white;
+}
+.category-page{
+
+    color:white;
+    background: #3B4F68;
+    min-height:100vh;
+    opacity:0.8
+
+}
+.blog-post{
+    margin-top: 20%;
+}
+textarea{
+    height:300px;
+    width:90%;
+}
+a{
+    font-size:.9em;
+    text-decoration:none;
+    color:white;
+    font-weight: 900;
+}
+a:visited{
+    color:white;
+    text-decoration:none;
+}
+a:hover{
+    color:white;
+}
+
+.blog-body{
+        margin:auto;
+        text-align:center;
+        background: #3B4F68;
+        font-size: 1.5em;
+        max-width: 70%;
+}
+
+.read-more {
+
+        position: absolute;
+        bottom: 3px;
+        right:3px;
+}
+.hashtag-body{
+
+    margin:auto;
+
+    text-align:center;
+}
+.hashtags{
+
+    display:inline-block;
+    margin:10px;
+    font-size: 1.3em;
+}
+.row{
+  margin: 0;
+}
+.dropdown-item {
+    color:white;
+    font-weight:500;
+}
+.create-menu{
+    color:white;
+    background-color:#3B4F68;
+    z-index:2;
+}
+.blogs{
+    margin-top:10%;
+    height: 30vh;
+
+    padding: 0;
+    margin-bottom: 5%;
+    max-height:256px;
+
+}
+.category-header{
+  font-weight: 500;
+  font-size: 3.5em;
+  text-align: center;
+  margin-top: 5%;
+}
+.blog-header{
+    margin-top:10%;
+    margin-bottom:5%;
+    text-align:center;
+}
+.blog-content{
+    background-color: white;
+    color:black;
+    padding:0;
+
+}
+.image-column{
+  padding: 0;
+  color: black;
+  max-width: 256px;
+  max-height: 256px;
+}
+
+img{
+  padding: 0;
+}
+
+  .color-overlay-pages{
+
+        width:100%;
+        min-height:100%;
+        background:rgba(0,0,0,0.2);
+        opacity:0.7;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:-10;
+
+}
+
+.login-input{
+
+    background-image:url(../img/galaxy.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat:repeat;
+    min-height:100vh;
+
+
+}
+.login-form{
+    width:300px;
+    line-height:2.3em;
+    padding:25px;
+    background: #3B4F68;
+    border-radius:10px;
+    box-shadow: 5px 5px 3px gray;
+}
+.login-button{
+    margin-top: 1.2em;
+    width:50%;
+}
+.category-title{
+    margin-bottom: 20%;
+    text-align:center;
+}
+
+.thumbnail{
+    height:100%;
+
+}
+
+.date-header{
+    margin-left:5%;
+}
+.review-button{
+        border-radius:5px;
+        margin:5px;
+
+    }
+    .table {
+        color:white;
+        background-color:#3B4F68;
+    }
+    th{
+        font-size:1.5em;
+    }
+    .login-form{
+        color:white;
+    }
+    #login-button{
+
+        margin-top: 5%;
+        color:white;
+        background-color:#3B4F68;
+        border: 2px solid white;
+    }
+    #login-button:hover{
+        cursor:pointer;
+    }
+    ::placeholder {
+        color: white;
+        opacity: 1;
+
+     }
+    .input-style{
+            color:#fff;
+
+            background: #3B4F68;
+            padding: 10px;
+            width:93%;
+            border-bottom: #FFF;
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+            border-top-style:none;
+            border-left-style:none;
+            border-right-style:none;
+        }
+
+    input:focus {
+          outline: none;
+        }
+
+    .svg-icon{
+      position:absolute;
+      width:50%;
+      bottom:0;
+      left:0;
+      right:0;
+      margin:auto;
+
+    }
+
+
+    .outerSquare{
+
+      stroke-dasharray:2352;
+      stroke-dashoffset:-2352;
+      animation: drawOuterSquare 5s 1;
+      transform-origin: 50% 50%;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes drawOuterSquare{
+      from{
+        stroke-dashoffset:-2350;
+        transform: rotate(0deg);
+
+      }
+      to{
+        stroke-dashoffset:0;
+        transform: rotate(360deg)
+      }
+
+    }
+
+    .inner-square{
+
+      stroke-dasharray:2104;
+      stroke-dashoffset:-2104;
+      animation: drawInnerSquare 3s infinite;
+      transform-origin:50% 50%;
+    }
+
+    @keyframes drawInnerSquare{
+      from{
+        stroke-dashoffset:-2104;
+        transform: rotate(0deg);
+      }to{
+        stroke-dashoffset:0;
+        transform: rotate(360);
+      }
+
+    }
+
+
+    .spaceship{
+      stroke:black;
+      stroke-dashoffset:-2618;
+      stroke-dasharray:2618;
+
+      animation-name:spaceship;
+      animation-duration: 5s;
+      animation-iteration-count:1;
+      animation-direction: normal;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes spaceship {
+      from{
+        stroke-dashoffset:-2618;
+
+      }to{
+        stroke-dashoffset:0;
+      }
+    }
+
+@media only screen and (max-width: 600px) {
+  body{
+    font-size: .6em;
+  }
+    h1{
+      font-size:  1.5em;
+    }
+  .icon{
+
+  }
+  a{
+        margin-left: -25px;
+        font-size: 7px;
+    }
+    .category-header{
+        font-size: 2em;
+    }
+    .date-header{
+        font-size:1em;
+    }
+    .read-more{
+        font-size:1em;
+        width:25%;
+    }
+
+    .navigation{
+        display:none;
+    }
+    p{
+        font-size:.8em;
+    }
+    .blog-body{
+            font-size: .1em;
+            line-height: 2em;
+            text-align: left;
+            max-width: 100%;
+            padding-left: 4px;
+    }
+    .review-button{
+        font-size: 7px;
+        width:70%
+    }
+
+    .new-post{
+        margin-left: -20px;
+    }
+    .logout{
+            margin-left: -20px;
+            width: 100%;
+            font-size: 7px;
+    }
+
+
+  }
+  @media only screen and (max-width: 600px) {
+    p{
+
+    }
+  }

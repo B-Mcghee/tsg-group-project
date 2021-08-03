@@ -1,0 +1,109 @@
+<html xmlns:th="http//www.thymeleaf.org" xmlns ="http://www.w3.org/1999/xhtml">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+
+
+<<<<<<< HEAD
+
+
+       
+=======
+        <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous"/>
+        <link th:href="@{/css/main.css}" href="../static/css/main.css"
+              rel="stylesheet" type="text/css" media="screen"/>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+
+
+
+>>>>>>> master
+        <title>BLOG REVIEW</title>
+
+    </head>
+    <body>
+        <div th:replace = "fragments.html :: header"></div>
+
+        <div class="body-content">
+            <div class="color-overlay-pages"></div>
+            <div class= "row container-full-width">
+
+
+
+
+                <div th:replace = "fragments.html :: sideNav"></div>
+
+                <div class="col-9 container">
+                    <h1 class="category-header">Blog Review</h1>
+                    <div id="tableToReload" class="col text-center m-3">
+                        <table id="reviewtable" class="table table-dark">
+
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Title</th>
+                                    <th>Post Date</th>
+                                    <th>Post Expiration</th>
+                                    <th>Status</th>
+                                    <th>Toggle Status</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="blog : ${blogs}">
+                                    <td>
+                                        <span th:each="category : ${categories}"
+                                              th:object="${category}"
+                                              th:if="${category.id} == ${blog.categoryId}"
+                                              th:text="${category.name}">
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <a th:href="@{/spaceblog/blog/id(id=${blog.id})}" th:text="${blog.title}"/>
+                                    </td>
+                                    <td th:text="${#temporals.format(blog.datePosted, 'MMM dd, yyyy')}">Post Date</td>
+                                    <td th:text="${#temporals.format(blog.postExpired, 'MMM dd, yyyy')}">Post Removal</td>
+                                    <td th:text='${blog.status.name}'>Blog Status</td>
+                                    <td>
+                                        <a href="#" th:href="@{/spaceblog/blog/approve/}+${blog.id}">Toggle Status</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" th:href="@{/spaceblog/blog/edit/(id=${blog.id})}">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" th:href="@{/spaceblog/blog/delete/}+${blog.id}" onclick="return confirm('Are you sure you would like to delete this blog?')">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/js/dataTables.bootstrap4.min.js"></script>
+
+        <script>
+                                            $(document).ready(function () {
+                                                $('#reviewtable').DataTable();
+                                            });
+        </script>
+
+    </body>
+</html>

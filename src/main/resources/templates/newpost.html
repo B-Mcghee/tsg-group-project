@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:replace = "headerfiles">
+
+</div>
+<body>
+<div th:replace="fragments.html :: header"></div>
+<div class="body-content">
+<div th:replace = "fragments.html :: sideNav"></div>
+
+    <div class="blog-post col-9 container">
+        <h1>Create a new post</h1>
+        <form method="post">
+            <textarea id="textarea">Start Writing Here</textarea>
+            <button type="submit">Submit Post</button>
+        </form>
+    </div>
+
+
+
+
+<div th:replace="fragments.html :: footer"></div>
+</div>
+</body>
+
+
+
+</html>
